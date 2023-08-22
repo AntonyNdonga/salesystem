@@ -1,18 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/register.css">
+    <title>Document</title>
 </head>
 <body>
-    <h1>Register</h1>
-    <form method="POST" action="/register">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        <input type="submit" value="Register">
-    </form>
-    <br>
-    <a href="/login">Already have an account? Login</a>
+    <div class="container">
+        <h2 class="text-center text-dark mt-5">ANTONY MARKET</h2>
+         <div class="row justify-content-center mt-5">
+           <div class="col-md-6">
+              <div class="card">
+                   <div class="card-body">
+                         <form action="/signup" method="POST">
+                             <div class="mb-3">
+                                 <label for="name" class="form-label"><p style="color: rgb(26, 23, 23);">Your Name</p></label>
+                                 <input type="text" class="form-control" name="full_name" id="name" placeholder="enter your full name" >
+                                    
+                             </div>
+                             <div class="mb-3">
+                                 <label for="email" class="form-label"><p style="color: rgb(13, 13, 13);">Your Email</p></label>
+                                 <input type="email" class="form-control" id="email" name="email" placeholder="enter your email">
+                         
+                             </div>
+                             <div class="mb-3">
+                                 <label for="password1" class="form-label"><p style="color: rgb(1, 1, 1);">Password</p></label>
+                                 <input type="password" class="form-control" id="password" name="password" placeholder="enter password">                              
+                             </div>
+                     
+                             <button type="submit" class="btn btn-primary">Register</button>
+                         </form>
+                     </div>
+                     <div class="card-footer">
+                         <p style="color: rgb(19, 24, 17);">Already have an account? <a href="/login">Login</a></p>
+                     </div>
+       
+                 </div>
+             </div>
+         </div>
+       </div>
 </body>
 </html>

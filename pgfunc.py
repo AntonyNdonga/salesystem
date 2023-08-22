@@ -7,7 +7,6 @@ except Exception as e:
     print(e)
 
 
-
 def fetch_data(tbname):
     try:
         q = "SELECT * FROM " + tbname + ";"
@@ -27,23 +26,6 @@ def insert_products(v):
     cur.execute(q)
     conn.commit()
     return q
-    
-
-
-
-
-
-# def delete_row_from_products(q):
-#     # Create a cursor object to interact with the database
-#     cursor = conn.cursor()
-#     # Execute the DELETE query
-#     q = "DELETE FROM products WHERE id = (name, buying_price, selling_price,)"
-#     cursor.execute(q)
-#     # Commit the changes and close the connection
-#     conn.commit()
-#     cursor.close()
-#     conn.close()
-
 
 
 def update_products(vs):
@@ -57,10 +39,20 @@ def update_products(vs):
     return q
 
 
+def delete_products(vs):
+    id = vs[0]
+    name = vs[1]
+    buying_price = vs[2]
+    selling_price = vs[3]
+    q = "DELETE products SET name = %s, buying_price = %s, selling_price = %s WHERE id = %s"
+    cur.execute(q, (name, buying_price, selling_price, id))
+    conn.commit()
+    return q
+
+
 def insert_products(v):
     vs = str(v)
-    q = "insert into products(name,buying_price,selling_price) "\
-        "values" + vs
+    q = "insert into products(name,buying_price,selling_price) " "values" + vs
     cur.execute(q)
     conn.commit()
     return q
@@ -75,8 +67,6 @@ def insert_sales(v):
 
 
 # STORE ALL PRODUCT NAMES IN A LIST AND ONLY PRINT THAT LIST, DO NOT FILTER IN THE QUERRY.
-
-
 def remaining_stock():
     q = " SELECT * FROM remaining_stock;"
     cur.execute(q)
@@ -105,6 +95,26 @@ def sales_per_day():
     results = cur.fetchall()
     return results
 
+# def add_users(full_name, email, password, confirm_password,created_at):
+#     if not all([full_name, email, password, confirm_password]):
+#         return "Error: Please provide all required information."
+
+#     if password != confirm_password:
+#         return "Error: Passwords do not match."
+
+#     q = "INSERT INTO users  (full_name, email, password, confirm_password,created_at) " \
+#         "VALUES (%s, %s, %s, %s,%s);"
+#     cur.execute(q, (full_name, email, password, confirm_password,created_at))
+#     conn.commit()
+#     return "User added successfully."
+
+
+
+def login():
+    q = "SELECT email, password FROM users;"
+    cur.execute(q)
+    results = cur.fetchall()
+    return results
 
 
 def remainin_stock(product_id=None):
@@ -120,4 +130,13 @@ def remainin_stock(product_id=None):
         return results[0]
     else:
         return None
+
+
+def get_pid():
+    q = "SELECT id from products"
+    cur.execute(q)
+    qu = cur.fetchall()
+    return qu
+
+
 # STORE ALL PRODUCT NAMES IN A LIST AND ONLY PRINT THAT LIST, DO NOT FILTER IN THE QUERRY.

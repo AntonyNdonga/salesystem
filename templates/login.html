@@ -1,19 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/login.css">
+  <title>Document</title>
 </head>
 <body>
-    <h1>Login</h1>
-    <form method="POST" action="/login">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        <input type="submit" value="Login">
-    </form>
-    <br>
-    <a href="/register">Create an account</a>
+  
+<div class="container">
+  <h2 class="text-center text-dark mt-5">ANTONY MARKET</h2>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      
+        <div class="card my-2">
+        <form
+          action="/login" method="post"class="card-body cardbody-color p-lg-5">
+          <div class="text-center">
+            <img src="../static/login.jpeg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3" width="200px"
+              alt="profile"/>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="form2Example1">Email address:</label>
+            <input type="email" class="form-control" name="email" id="id" aria-describedby="emailHelp" placeholder="enter email"/>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="form2Example2">Password:</label>
+            <input type="password" class="form-control" name="password" id="id" placeholder="enter password"/>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-color px-5 mb-5 w-100">Login</button>
+          </div>
+        </form>
+        <div class="card-footer">
+          <p>Don't have an account? <a href="/register">Register</a></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </body>
 </html>
- 
