@@ -1,6 +1,25 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<style>
+          .bg-image {
+    /* The image used */
+    background-image: url("/static/images/blurred-restaurant-cafe-background-tables-chairs-lobby-mall-visitors-restaurant-dinner-beautiful-bright-interior-blurred-bokeh-basic-background-design.jpg");
+
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+<div class="bg-image"></div>
 <div class="container">
     <div class="col-12">
         <div class="row">

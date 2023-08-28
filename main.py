@@ -221,9 +221,13 @@ def login_page():
 def logout():
     session.clear()
     flash(
-        '"You have been logged out. To regain access, please log in."', category="error"
+        "You have been logged out. To regain access, please log in.", category="error"
     )
-    return redirect("/")
+    return render_template("logout.html")
+
+@app.route("/contacts")
+def contacts():
+    return render_template("contacts.html")
 
 
 @app.route("/login", methods=["POST", "GET"])

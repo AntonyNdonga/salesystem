@@ -1,38 +1,88 @@
 {% extends "layout.html" %}
 
-  {% block content %}
-  <h4> <span style="color: rgb(13, 150, 66);" >{{username}}</span></h4>
+{% block content %}
+<h4> <span style="color: rgb(13, 150, 66);">{{username}}</span></h4>
 <style>
-  .part-one{
-    text-align: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: x-large;
-    font-style: oblique;
+  body,
+  html {
+    height: 100%;
   }
-  p{
-    font-style: italic;
+
+  * {
+    box-sizing: border-box;
+  }
+
+    .bg-image {
+/* The image used */
+background-image: url(/static/images/bgflllll.png);
+/* Add the blur effect */
+filter: blur(8px);
+-webkit-filter: blur(10px);
+
+/* Full height */
+height: 100%;
+
+/* Center and scale the image nicely */
+background-position: right;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+  /* Position text in the middle of the page/image */
+  .bg-text {
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
     text-align: center;
   }
-  h3{
-    text-align: center;
-  }
+    .part-one {
+      text-align: center;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: x-large;
+      font-style: oblique;
+    }
+
+    p {
+      font-style: italic;
+      text-align: center;
+    }
+
+    h3 {
+      text-align: center;
+    }
 </style>
 
+<div class="bg-image"></div>
+<div class="bg-text">
   <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="sect-one">
-          
+
           <div class="part-one">
-          <h1>WELCOME TO SPIRDE MARKET</h1>
-        </div>
+            <h1>WELCOME TO URIDHI MARKET</h1>
+          </div>
           <P><i></i>where </i></P>
-          <h3>WE TRADE AND PRAISE YOU</h3>
+          <h3>WE TRADE AND VALUE YOU</h3>
         </div>
       </div>
     </div>
   </div>
-  {% endblock %}
+</div>
+
+{% endblock %}
+
 
 
 </html>
